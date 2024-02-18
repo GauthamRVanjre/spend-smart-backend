@@ -10,10 +10,28 @@ const prisma = new PrismaClient();
       create: {
         name: "Gautham Vanjre",
         username: "@gautham10",
+        email: "gauthamvanjre@gmail.com",
+        createdAt: new Date(),
+        expenses: {
+          create: [
+            {
+              amount: 100,
+              category: "need",
+              description: "Spent on food",
+              createdAt: new Date(),
+            },
+            {
+              amount: 400,
+              category: "wants",
+              description: "Spent on movie",
+              createdAt: new Date(),
+            },
+          ],
+        },
       },
     });
 
-    console.log("Create 1 user ", gauthamVanjre);
+    console.log("Create 1 user with 2 expenses ", gauthamVanjre);
   } catch (e) {
     console.error(e);
     process.exit(1);

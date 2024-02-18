@@ -6,7 +6,11 @@ const prisma = new PrismaClient();
 
 router.get("/", async (req, res) => {
   try {
-    const users = await prisma.user.findMany({});
+    const users = await prisma.user.findMany({
+      include: {
+        expenses: true,
+      },
+    });
 
     res.status(200).json({
       users,

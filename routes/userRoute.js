@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
       users,
     });
   } catch (error) {
-    res.status(500).json({ error: "Server error, could not get products" });
+    res.status(500).json({ error: "Server error, could not get users" });
   }
 });
 
